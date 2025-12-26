@@ -1,0 +1,75 @@
+package setCookie;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+/**
+ * Servlet implementation class WelcomeCookie
+ */
+@WebServlet("/WelcomeCookie")
+public class WelcomeCookie extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public WelcomeCookie() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.setContentType("text/html");
+		PrintWriter out=response.getWriter();
+	    
+		//retrieve cookie form LoginCookie
+		
+		Cookie cookie[]=request.getCookies();
+		String uname=null;
+		if(cookie!=null);
+		{
+			for(Cookie ck1:cookie)
+			{
+				if("username".equals(ck1.getName()))
+				{
+					uname=ck1.getValue(); //value admin
+				}
+			}
+		}
+		//display welcome message 
+		if (uname!=null)	
+		{
+			out.println("<h1>Welcome,"+uname+"</h1>");
+			 out.println("<a href='LogoutCookie'><h1>Logout</h1></a>");
+			
+			
+		}
+		else {
+			
+			
+			out.println("<h1>No user Login found</h1>");
+			out.println("<p><a herf='login.jsp'>Login</a></p>");
+		}
+		
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

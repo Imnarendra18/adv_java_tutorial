@@ -1,0 +1,55 @@
+package methodSevlet;
+
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+/**
+ * Servlet implementation class Method
+ */
+@WebServlet("/Method")
+public class Method extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    public Method() {
+        super();
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        response.setContentType("text/html");
+        PrintWriter pw = response.getWriter();
+
+        // Context path
+        pw.append("<p>Served at: ").append(request.getContextPath()).append("</p>");
+
+        // Servlet Config parameter
+        String configvalue = getServletConfig().getInitParameter("configname");
+        pw.print("<p>config value: " + configvalue + "</p>");
+
+        // Servlet Context parameter
+        ServletContext context = getServletContext();
+        String contextparam = context.getInitParameter("contextname");
+        pw.print("<p>context param: " + contextparam + "</p>");
+
+        // Servlet info
+        pw.print("<p>method of Servlet</p>");
+
+        // User-Agent
+        String useragent = request.getHeader("User-Agent");
+        pw.print("<p>user agent: " + useragent + "</p>");
+
+        // HTTP method name
+        String method = request.getMethod();
+        pw.print("<p>method name: " + method + "</p>");
+
+        // Auto refresh to Index.jsp after 20 seconds
+        response.setHeader("Refresh", "20;URL=Index.jsp");
+    }
+}
