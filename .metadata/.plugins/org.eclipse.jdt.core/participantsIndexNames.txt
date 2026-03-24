@@ -1,9 +1,0 @@
-INDEX VERSION 1.134
-C:\Users\user\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1534424489.index
-\sessiondemo\src\main\java
-C:\Users\user\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1219823873.index
-\ServletMethod\src\main\java
-C:\Users\user\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\807665744.index
-\CookieDemo\src\main\java
-C:\Users\user\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1537207726.index
-\ServletMethod\src\main\java

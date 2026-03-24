@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<modules>
-  <module moduleId="org.eclipse.jst.jee.server:narendra" serverId="Tomcat v11.0 Server at localhost"/>
-  <module moduleId="org.eclipse.jst.jee.server:experiment1" serverId="Tomcat v11.0 Server at localhost"/>
-  <module moduleId="org.eclipse.jst.jee.server:my_first_java_program" serverId="Tomcat v11.0 Server at localhost"/>
-</modules>
